@@ -22,3 +22,12 @@ int PowerRec1(int a, int n)
 Console.WriteLine(PowerFor(2, 10));
 Console.WriteLine(PowerRec(2, 10));
 Console.WriteLine(PowerRec1(2, 10));
+
+// 4 способ - делим степень пополам - уменьшаем количество итераций
+int PowerRecMath(int a, int n)
+{
+    if (n == 0) return 1;
+    else if (n % 2 == 0) return PowerRecMath(a * a, n / 2);
+    else return PowerRecMath(a, n-1) * a;
+}
+Console.WriteLine(PowerRecMath(2, 9));
